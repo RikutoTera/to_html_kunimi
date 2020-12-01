@@ -1,0 +1,53 @@
+# ワークフローの名前
+name: kunimi
+
+ 
+
+# ワークフローの実行タイミング
+# この場合は 10 分に 1 回
+#
+# cron のフォーマットは以下が参考になる
+# http://manpages.ubuntu.com/manpages/trusty/ja/man5/crontab.5.html
+on:
+  schedule:
+    - cron:  '*/10 * * * *'
+
+ 
+
+# ジョブの記述
+jobs:
+  # job_id は "build"
+  build:
+    # ジョブの名前（GitHub 上で表示される）
+    name: deploy
+    # Ubuntu で実行する
+    # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: ubuntu-latest
+
+ 
+
+    # ジョブのステップ
+    steps:
+    - name: Checkout
+      # チェックアウト
+      uses: actions/checkout@v2
+    - name: Setup Python 3.8
+      # Python のセットアップ
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      # Python 外部パッケージをインストール
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run script
+      # Python スクリプトを実行する
+      run: |
+        python to_html_kunimi.py
+    - name: deploy
+      # gh-pages ブランチに成果物をデプロイする
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
