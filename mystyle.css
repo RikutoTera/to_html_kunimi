@@ -1,0 +1,141 @@
+.mystyle {
+    font-size: 60pt;
+    font-family: Arial;
+    border-collapse: collapse;
+    border: 1px solid silver;
+ 
+}
+ 
+.mystyle td, th {
+    padding: 5px;
+}
+.mystyle b1{
+	font-size: 30pt;
+}
+.mystyle tr:hover {
+    background: silver;
+    cursor: pointer;
+}
+
+header {
+	background-color: white;
+}
+
+
+body {
+	background-color:#FFFFCC;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+header{
+    height: 75px;
+}
+b1{
+    font-size: xx-large;
+}
+
+.home{
+    display: flex;
+    width: 100%;
+    height: 70px;
+}
+
+.home_a img{
+    height: 70px;
+    margin-top: -10px;
+    margin-left: 10px;
+    margin-right: 550px;
+    float: left;
+}
+
+#nav {
+    width: 100%;
+    list-style: none;
+    overflow: hidden;
+    margin-right: 60px;
+    height: 100%;
+    
+}
+
+#nav ul{
+    display: flex;
+    
+}
+
+#nav li{
+    width: 200px;
+    line-height: 25px;
+    text-align: center;
+    float: left;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: auto;
+    margin-top:5px;
+    font-weight: bold;
+    padding: 10px 5px;
+    background-color: #ffffff;
+    color: #000000;
+    border: #000000 solid 2px;
+    border-radius: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+}
+
+#nav li:hover{
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+    cursor: pointer;
+  }
+
+#nav li a {
+        text-decoration: none;
+        text-align: center;
+        color: black;
+        display: block;
+}
+
+footer{
+    height: 25px;
+    width: 100%;
+    margin-top: -3px;
+    text-align: center;
+    position: absolute;
+    bottom: 100px;
+    
+}
+#nav_footer{
+    list-style: none;
+    display: flex;
+    margin-top: 35px;
+    padding-left: 0;
+    justify-content: center;
+}
+
+ 
+
+#nav_footer li{
+    width: 20%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+ 
+
+#nav_footer li+ li{
+    border-left: 1px solid #333;
+}
+
+ 
+
+#nav_footer li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 20px;
+}
