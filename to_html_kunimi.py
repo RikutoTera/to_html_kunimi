@@ -42,7 +42,7 @@ html_string = '''
   </head>
   <link rel="stylesheet" type="text/css" href="mystyle.css"/>
   <body>
-  <header> <!--ページ遷移ボタンを作成-->
+  <header> 
         <div class="home">
             <h1 class="home_a">
                 <a href="top.html"><img src="https://raw.githubusercontent.com/RikutoTera/to_html_kunimi/小麦.png" alt="AGRI"></a>
@@ -57,36 +57,6 @@ html_string = '''
                     </ul>
         </div>
     </header>
-      <!--日付・地域情報を表示-->
-  <p id = "date"></p>
-<table id="wrap">
-  <script>
-    <!--変数listに26を代入-->
-  	const list = Array.from(new Array(26)).map((v,i) => i)
-    $(function(){
-      <!--GitHubからjsonファイルを取得-->
-      $.getJSON("https://raw.githubusercontent.com/OnoRyota/bungotakada/gh-pages/BungotakadaNoAme.json", function(sample_list){
-        <!--要素を一つづつ取り出しテーブルとして表示する-->
-        
-        for(var i in sample_list){
-        	var h = '<tr>'
-        	$("table#wrap").append(h);
-        	
-        	for(var j in list){
-          	    h = '<td>'
-                + sample_list[i][j]
-                + '</td>'
-           $("table#wrap").append(h);
-          }
-          h = '</tr>'
-          $("table#wrap").append(h);
-        }
-        
-      });
-    });
-  </script>
-</table>
-
     {table}
     <b1>降水確率は左から0-6時,6-12時,12-18時,18-24時です</b1>
     <footer>
