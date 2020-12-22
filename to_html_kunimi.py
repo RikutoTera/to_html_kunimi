@@ -25,7 +25,10 @@ df = df.dropna(axis=1, how='any')
 
 # <th>内の文字列を真ん中に寄せる
 pd.set_option('colheader_justify', 'center')
-
+try:
+  $("#date")
+except KeyError:
+  print('No such key')
 html_string = '''
 <html>
   <head><meta charset="utf-8">
