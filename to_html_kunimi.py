@@ -32,11 +32,8 @@ except KeyError:
 html_string = '''
 <html>
   <head><meta charset="utf-8">
-  <!--githubからjQueryを取得-->
-  <script type="text/javascript" src="https://raw.githubusercontent.com/RikutoTera/to_html_kunimi/jquery-3.5.1.min.js"></script>
+
   <title>国見の天気</title>
-  <script type = "text/javascript">
-     $(document).ready(function(){$("#date").load("https://raw.githubusercontent.com/OnoRyota/bungotakada/gh-pages/date.txt");});
 
   </script>
   </head>
